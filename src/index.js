@@ -14,4 +14,10 @@ const server = new ApolloServer({
   },
 });
 
-await server.listen({port: process.env.PORT || 4000});
+async function startApolloServer(server) {
+  const { url } = await server.listen({port: process.env.PORT || 4000});
+}
+
+startApolloServer(server);
+
+
